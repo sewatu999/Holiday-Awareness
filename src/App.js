@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import { Link, Switch, Route, Redirect } from 'react-router-dom';
 // import './App.css';
 import Index from './index.js';
-import Months from './Months/months.js';
+import MonthsList from './Months/months.js';
 import Home from './Home/Home';
 import Holiday from './Holidays/Holiday';
 
 // get months on the homePage
 
-// console.log(monthsList);
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Month: Months
+      Month: MonthsList,
+      monthNames: ['']
     };
   }
 
@@ -21,40 +21,45 @@ class App extends Component {
     this.state({ selectedMonth: selectedMonth });
   };
   setMonth = Month => {
-    this.setState({ Month: Month });
+    this.setState({ MonthNames: Month });
   };
 
   render() {
+    // function handleChange(event) {
+    //   selectedMonth(event.target.value);
+    // }
+
+    // function handleSubmit(event) {
+    //   event.preventDefault();
+    //   getMonth(monthsList);
+    // }
     return (
       <div>
         <nav>
-          <Link to="/">
-            {/* <img
-              src="https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png"
-              alt=""
-            /> */}
-            <h1> Holiday Awareness</h1>
-          </Link>
-          <Link to="/Holiday"> Holiday </Link>
+          <h1> Holiday Awareness </h1>
+          <p>Plan your holidays</p>
         </nav>
         <main>
           <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/Holidays" component={Months} />
             <Route
-              render={routerProps => {
-                return (
-                  <Redirect
-                    monthsList={this.state.Months}
-                    // setPrice={this.setPrice}
-                    // match={this.props.match}
-                  />
-                );
-              }}
+              path="/"
+              exact
+              name
+              render={props => (
+                <Home
+                  {...props}
+                  months={this.state.monthsList}
+                  setMonth={this.setMonth}
+                />
+              )}
             />
+
             <Route
-              path="/Holiday"
-              render={() => <Redirect to="/monthsList" />}
+              exact
+              path="/:months"
+              render={props => {
+                return <Holiday {...props} />;
+              }}
             />
           </Switch>
         </main>
@@ -62,7 +67,14 @@ class App extends Component {
     );
   }
 }
+
 export default App;
+
+/* <img
+  src="https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png"
+  alt=""
+/> */
+
 // <a
 //   className="App-link"
 //   href="https://reactjs.org"
@@ -72,25 +84,15 @@ export default App;
 //   Learn React
 // </a>
 //
-/* 
-      fetch(url)
-    .then(response => response.json())
-    .then(response => {
-      setHolidays(response.data),
-      setLastSearch(searchString);
-      setSearchString(' ');
-    })
-    .catch(console.error);
-    
-    function handleChange(event) {
-      setSearchString(event.target.value);
-    }
-    
-    function handleSubmit(event) {
-      event.preventDefault();
-      // getImages();
-      getHolidays(searchString);
-      //     } */
+
+// fetch(url)
+//   .then(response => response.json())
+//   .then(response => {
+//     setMonths(response.data), setLastSearch(searchMonthsList);
+//     setMonthsList(' ');
+//   })
+//   .catch(console.error);
+
 //       </div>
 
 // export default App;

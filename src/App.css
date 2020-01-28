@@ -2,8 +2,9 @@
   text-align: center;
 }
 
-h1 {
+.App-h1 {
   text-align: center;
+  font-size: xx-large;
 }
 
 .App-logo {

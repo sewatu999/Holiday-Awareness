@@ -1,26 +1,36 @@
 import React, { Component } from 'react';
-import Holiday from '../Holidays/Holiday';
-// import { Link, Switch, Route, Redirect } from 'react-router-dom';
-import Months from '../Months/months.js';
-// import Index from '../index.js';
-// import App from '../App';
+import './Home.css';
+import { Link } from 'react-router-dom';
+import monthsList from '../Months/months.js';
 
 class Home extends Component {
   render() {
-    function months(Months) {
-      return `monthsList`;
-    }
-    return (
-      <div>
-        <h1> Holiday Awareness </h1>
-        <p>Plan your holidays</p>
+    let monthNames = monthsList.map(month => {
+      return (
+        <div className="monthContainer" key={month}>
+          <p>
+            <Link to={'/' + month}> {month}</Link>
+          </p>
+        </div>
+      );
+    });
 
-        {/* <Months monthsList={this.props.monthsList} /> */}
-      </div>
-    );
+    return <div>{monthNames}</div>;
   }
 }
 export default Home;
+
+{
+  /* <h1> Holiday Awareness </h1>
+<p>Plan your holidays</p> */
+}
+// console.log(birdImages);
+// return <div>{birdImages}</div>;
+// return (
+//   <div>
+
+//   </div>
+// );
 
 // render() {
 //   Months = monthsList.map(month => {
