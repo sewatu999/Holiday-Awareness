@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Switch, Route, Redirect } from 'react-router-dom';
-// import './App.css';
+import './App.css';
 import Index from './index.js';
 import MonthsList from './Months/months.js';
 import Home from './Home/Home';
@@ -13,7 +13,8 @@ class App extends Component {
     super(props);
     this.state = {
       Month: MonthsList,
-      monthNames: ['']
+      // monthNames: ['']
+      selectedMonth: ['']
     };
   }
 
@@ -25,14 +26,6 @@ class App extends Component {
   };
 
   render() {
-    // function handleChange(event) {
-    //   selectedMonth(event.target.value);
-    // }
-
-    // function handleSubmit(event) {
-    //   event.preventDefault();
-    //   getMonth(monthsList);
-    // }
     return (
       <div>
         <nav>
@@ -92,7 +85,3 @@ export default App;
 //     setMonthsList(' ');
 //   })
 //   .catch(console.error);
-
-//       </div>
-
-// export default App;
