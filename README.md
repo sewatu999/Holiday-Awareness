@@ -1,10 +1,10 @@
-#Holiday Awareness
+# Holiday Awareness
 
 Holiday awareness is a app that will help users keep up with the holidays. Reminded of the holidays, users can plan family get togethers and trips..
 
-## Prerequisites
+## Technologies Used
 
-- React, Javascript
+- React, Javascript, Es6
 
 - React-Router-Dom, API
 
@@ -14,18 +14,20 @@ Holiday awareness is a app that will help users keep up with the holidays. Remin
 
 ## Installing
 
-- Brainstorming the development
+- Go to Github
 
-- Researching
+- Locate Holiday Awareness
 
-- Searching through lists of API key
+- Download Holiday Awareness
 
-- Installing Heroku
+- Open app on your computer
 
-- Coding Methods/ Visual Code
-
-- Members of seir-129
+- Click into the month of choice
 
 ## Instructions
 
 Click on the month of users choice and find out the holidays in that month. The user can then click the back button to return to the home page.
+
+## Contributors
+
+Contributors can click on the src link above to access code..
