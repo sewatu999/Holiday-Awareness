@@ -3,11 +3,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Link, Switch, Route, Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Home from './Home/Home';
-import monthsList from './Months/months.js';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Holiday from './Holidays/Holiday';
 
 ReactDOM.render(
   <Router>

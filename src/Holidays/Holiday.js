@@ -3,67 +3,69 @@ import { Link, Switch, Route, Redirect } from 'react-router-dom';
 import MonthsList from '../Months/months';
 import Home from '../Home/Home';
 
-var monthsList = MonthsList;
-var monthNames = monthsList;
-var output = output;
+var months = {
+  January: '01',
+  February: '02',
+  March: '03',
+  April: '04',
+  May: '05',
+  June: '06',
+  July: '07',
+  August: '08',
+  September: '09',
+  October: '10',
+  November: '11',
+  December: '12'
+};
 
 class Holiday extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      monthNum: '',
       monthName: '',
-      Holiday: Date,
+      holiday: '',
       monthsList: [' ']
-      // month: this.props.match.params.holidays
     };
+    //turn month names into the months number
+    //record month thats clicked
+    //write if statement that if this month is click our monthNum will be this.
+    // take monthNum and dynamically put into my Url fetch.
   }
-  //turn month names into the months number
-  //record month thats clicked
-  //write if statement that if this month is click our monthNum will be this.
-  // take monthNum and dynamically put into my Url fetch.
   componentDidMount() {
-    function getMonthFromString(monthsList) {
-      return new Date(Date.parse(monthsList + ' 1,2020')).getMonth() + 1;
-    }
+    let monthNumber = months[this.props.match.params.months];
+    let apiKey = process.env.REACT_APP_HOLIDAY_KEY;
 
     fetch(
-      'https://getfestivo.com/v1/holidays?api_key=f34e3961-f0c5-4b62-9c5b-fdb9a820f926&country=US&year2020&month${} '
-      //+ this.props.match.params.monthsNumber
+      `https://getfestivo.com/v1/holidays?api_key=${apiKey}&country=US&year=2020&month=${monthNumber}`
     )
       .then(res => res.json())
-      .then(data => {
-        this.setState({ Holiday: data.Holiday.Holiday });
-        console.log(this.state.month.Holiday);
 
-        // let output = '<p>Holidays</p>';
-        // data.forEach(function(month) {
-        //   output += `
-        //     <ul>
-        //     <li>holidays ${month.holidays}</li>
-        //     <li>dates: ${month.dates}</li>
-        //     <li>name: ${month.names}</li>
-        //     </ul>`;
-        // });
-        // document.getElementById('output').innerHTML = output;
-      })
-      .catch(err => console.log(err));
+      .then(response => {
+        this.setState({ holidays: response.holidays.holidays });
+        console.log(response);
+        console.log(this.state.holidays);
+      });
   }
+
   render() {
+    console.log(this.state.holidays);
+    let holidayList;
+    if (this.state.holidays) {
+      holidayList = this.state.holidays.map(holiday => {
+        return (
+          <div key={holiday.name}>
+            <p>{holiday.name}</p>
+            <p>{holiday.date}</p>
+          </div>
+        );
+      });
+    }
     return (
       <div>
-        <div>{'hello world'}</div>
+        <Link to="/">Back</Link>
+        {holidayList}
       </div>
     );
   }
 }
 export default Holiday;
-
-// function handleChange(event) {
-//   setMonth(event.target.value);
-// }
-
-// function handleSubmit(event) {
-//   event.preventDefault();
-//   getHolidays(monthsList);
-// }

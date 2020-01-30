@@ -3,29 +3,15 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 import monthsList from '../Months/months.js';
 
-const selectedMonth = [' '];
+// const numberOfMonths = [' '];
 class Home extends Component {
   render() {
     let monthNames = monthsList.map(month => {
       return (
         <div className="monthContainer" key={month}>
           <p>
-            <Link to={'/' + month} onClick={selectedMonth}>
-              {month}
-              {selectedMonth}
-            </Link>
+            <Link to={'/' + month}> {month} </Link>
           </p>
-          <div>
-            {/* onClick event => {
-              try {
-                if (onClick) onClick(event);
-              } catch (ex) {
-                event.preventDefault();
-                throw ex;
-              }
-            }
-           */}
-          </div>
         </div>
       );
     });

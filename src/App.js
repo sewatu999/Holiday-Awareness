@@ -6,6 +6,20 @@ import MonthsList from './Months/months.js';
 import Home from './Home/Home';
 import Holiday from './Holidays/Holiday';
 
+var months = {
+  January: '01',
+  February: '02',
+  March: '03',
+  April: '04',
+  May: '05',
+  June: '06',
+  July: '07',
+  August: '08',
+  September: '09',
+  October: '10',
+  November: '11',
+  December: '12'
+};
 // get months on the homePage
 
 class App extends Component {
@@ -13,8 +27,8 @@ class App extends Component {
     super(props);
     this.state = {
       Month: MonthsList,
-      // monthNames: ['']
-      selectedMonth: ['']
+      selectedMonth: [''],
+      Holidays: ['']
     };
   }
 
@@ -30,8 +44,9 @@ class App extends Component {
       <div>
         <nav>
           <h1> Holiday Awareness </h1>
-          <p>Plan your holidays</p>
         </nav>
+
+        <p>Plan your holidays</p>
         <main>
           <Switch>
             <Route
@@ -51,7 +66,14 @@ class App extends Component {
               exact
               path="/:months"
               render={props => {
-                return <Holiday {...props} />;
+                return (
+                  <Holiday
+                    {...props}
+                    Holiday={this.state.Holidays}
+                    months={this.state.monthsList}
+                    setMonth={this.setMonth}
+                  />
+                );
               }}
             />
           </Switch>
@@ -62,26 +84,3 @@ class App extends Component {
 }
 
 export default App;
-
-/* <img
-  src="https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png"
-  alt=""
-/> */
-
-// <a
-//   className="App-link"
-//   href="https://reactjs.org"
-//   target="_blank"
-//   rel="noopener noreferrer"
-// >
-//   Learn React
-// </a>
-//
-
-// fetch(url)
-//   .then(response => response.json())
-//   .then(response => {
-//     setMonths(response.data), setLastSearch(searchMonthsList);
-//     setMonthsList(' ');
-//   })
-//   .catch(console.error);
