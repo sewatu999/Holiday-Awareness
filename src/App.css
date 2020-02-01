@@ -2,17 +2,20 @@
   text-align: center;
 }
 
-.App-h1 {
-  text-align: center;
-  font-size: xxx xx-large;
+.monthContainer a {
+  color: blue;
 }
 
-.monthContainer a {
-  color: rgb(3, 3, 3);
-  display: grid;
-  align-items: stretch;
-  flex: 100em;
+a {
+  color: rgb(0, 0, 0);
+  navfont-size: xx-large;
+  /* text-align: center; */
+  /* flex-wrap: wrap; */
 }
+
+/* .a-may {
+  flex-flow: row;
+} */
 
 /* .App-header {
   background-color: #282c34;

@@ -5,6 +5,7 @@ import Index from './index.js';
 import MonthsList from './Months/months.js';
 import Home from './Home/Home';
 import Holiday from './Holidays/Holiday';
+import Header from './Header.js';
 
 var months = {
   January: '01',
@@ -43,10 +44,9 @@ class App extends Component {
     return (
       <div>
         <nav>
-          <h1> Holiday Awareness </h1>
+          <Header />
+          <p>Plan your holidays</p>
         </nav>
-
-        <p>Plan your holidays</p>
         <main>
           <Switch>
             <Route
@@ -75,7 +75,7 @@ class App extends Component {
                   />
                 );
               }}
-            />
+            ></Route>
           </Switch>
         </main>
       </div>
@@ -84,3 +84,13 @@ class App extends Component {
 }
 
 export default App;
+
+{
+  /* <Route
+    exact
+    path="./header"
+    render={props => {
+      return <Header {...props} />
+    }}
+  > */
+}

@@ -1,27 +1,30 @@
 body {
+  color: black;
   margin: 20px;
   font-family: cursive;
   font-size: x-large;
-  flex-direction: column;
+  /* flex-direction: column; */
+  background-color: bisque;
+  /* flex-flow: row; */
 }
 
-h1 {
+nav {
   text-align: center;
-  font-size: xx-large;
+
+  font-size: 2em;
+}
+
+.Home {
+  /* flex: content; */
 }
 
 p {
   text-align: center;
+  background-color: aliceblue;
+  /* flex-flow: row-reverse; */
 }
 
-div {
-  flex-direction: column;
-}
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-.LinkRouter {
-  color: aqua;
-}
+} */
