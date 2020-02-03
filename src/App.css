@@ -9,21 +9,4 @@
 a {
   color: rgb(0, 0, 0);
   navfont-size: xx-large;
-  /* text-align: center; */
-  /* flex-wrap: wrap; */
 }
-
-/* .a-may {
-  flex-flow: row;
-} */
-
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */

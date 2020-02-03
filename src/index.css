@@ -3,28 +3,19 @@ body {
   margin: 20px;
   font-family: cursive;
   font-size: x-large;
-  /* flex-direction: column; */
   background-color: bisque;
-  /* flex-flow: row; */
 }
 
 nav {
   text-align: center;
-
   font-size: 2em;
 }
 
-.Home {
-  /* flex: content; */
+.container {
+  display: inline-block;
+  width: em;
 }
 
 p {
   text-align: center;
-  background-color: aliceblue;
-  /* flex-flow: row-reverse; */
 }
-
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */

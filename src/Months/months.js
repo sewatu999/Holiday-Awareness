@@ -1,7 +1,8 @@
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
+import { Link, Switch, Route, Redirect } from 'react-router-dom';
 
-var monthsList = [
+let monthsList = [
   'January',
   'February',
   'March',

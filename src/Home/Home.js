@@ -8,14 +8,12 @@ class Home extends Component {
   render() {
     let monthNames = monthsList.map(month => {
       return (
-        <div className="monthContainer" key={month}>
-          <p>
-            <Link to={'/' + month}> {month} </Link>
-          </p>
-        </div>
+        <p className="monthItem" key={month}>
+          <Link to={'/' + month}> {month} </Link>
+        </p>
       );
     });
-    return <div>{monthNames}</div>;
+    return <div className="monthContainer">{monthNames}</div>;
   }
 }
 

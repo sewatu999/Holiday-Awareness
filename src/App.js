@@ -45,6 +45,7 @@ class App extends Component {
       <div>
         <nav>
           <Header />
+
           <p>Plan your holidays</p>
         </nav>
         <main>
@@ -84,13 +85,3 @@ class App extends Component {
 }
 
 export default App;
-
-{
-  /* <Route
-    exact
-    path="./header"
-    render={props => {
-      return <Header {...props} />
-    }}
-  > */
-}
