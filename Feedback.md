@@ -56,6 +56,7 @@ Criteria: Does the application work without errors or bugs? Does it present a co
 ### Areas for Growth:
 
 -   Numerous logs appear to the console when the user is navigating through the app. Next time be sure to remove before submission.
+-   To add another function to your app and make it a bit more complex, you could add a search function so that the user can search for a holiday by its name, and return the date that way.
 
 ## Presentation - Progressing
 
