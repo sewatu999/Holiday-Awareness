@@ -12,22 +12,22 @@ Holiday awareness is a app that will help users keep up with the holidays. Remin
 
 - Google Research
 
-## Installing
-
-- Go to Github
-
-- Locate Holiday Awareness
-
-- Download Holiday Awareness
-
-- Open app on your computer
-
-- Click into the month of choice
-
 ## Instructions
 
-Click on the month of users choice and find out the holidays in that month. The user can then click the back button to return to the home page.
+- Go to https://holiday-awareness.herokuapp.com/
+
+- Once Holiday Awareness page appears
+
+- Click the month of choice
+
+- The holidays for chosen months will appear
+
+- Click back button to return to the home page
 
 ## Contributors
 
-Contributors can click on the src link above to access code..
+The contributors of Holiday Awareness were Abdul James with assistance from instructor Esin Saribudak..
+
+## More
+
+Code can be viewed above, click src link
